@@ -5,18 +5,37 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AutosComponent } from './autos/autos.component';
 import { BasicService } from './services/basic.service';
+/*Modals*/
+import { BootstrapModalModule} from 'ng2-bootstrap-modal';
+import { ConfirmComponent } from './confirm/confirm.component';
+import { RouteRoutingModule } from './route/route-routing.module';
+import { ReadAutoComponent } from './read-auto/read-auto.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CreateAutoComponent } from './create-auto/create-auto.component';
+ 
+/*HTTP y JSONP*/
+//import { HttpModule,JsonModule}
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AutosComponent
+    AutosComponent,
+    ConfirmComponent,
+    ReadAutoComponent,
+    CreateAutoComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BootstrapModalModule,
+    RouteRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [BasicService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[ConfirmComponent]
 })
 export class AppModule { }
